@@ -1,35 +1,66 @@
+#include <stdlib.h> 
 #include <stdio.h>
-
-int main(void)
-{
-    int numero;
-    float primero;
-    float segundo;
-    String caracter;
-    int i,j;
-    scanf("%i",&numero);
-    float soluciones[numero];
-    for(i=0;i<numero;i++){
-        scanf("%c",&caracter);
-        scanf("%f",&primero);
-        scanf("%f",&segundo);
-        int resultado;
-        if(caracter == '+'){
-            resultado = primero + segundo;
-        }
-        else if (caracter == '-'){
-            resultado = primero - segundo;
-        }
-        else if (caracter == '*'){
-            resultado = primero * segundo;
-        }
-        else if (caracter == '/'){
-            resultado = primero / segundo;
-        }
-        soluciones[i] = resultado;
-    }
-    for(j=0;j<numero;j++){
-        printf("%f\n",soluciones[j]);
-    }
-    return 0;
+void sum(void){
+    float a;
+    float b;
+    float res;
+    scanf(" %f",&a);
+    scanf(" %f",&b);
+    res = a + b;
+    printf("%f\n",res);
 }
+void rest(void){
+    float a;
+    float b;
+    float res;
+    scanf(" %f",&a);
+    scanf(" %f",&b);
+    res = a - b;
+    printf("%f\n",res);
+}
+void mult(void){
+    float a;
+    float b;
+    float res;
+    scanf(" %f",&a);
+    scanf(" %f",&b);
+    res = a * b;
+    printf("%f\n",res);
+}
+void divi(void){
+    float a;
+    float b;
+    float res;
+    scanf(" %f",&a);
+    scanf(" %f",&b);
+    res = (float) a / b;
+    printf("%f\n",res);
+}
+void menu(void){
+    char sel;
+    scanf(" %c",&sel);
+    switch (sel){
+        case ('+') :
+            sum();
+            break;
+        case ('-') :
+            rest();
+            break;
+        case ('*') :
+            mult();
+            break;
+        case ('/') :
+            divi();
+            break;
+    }
+}
+int main(void){
+    int i;
+    int a;
+    scanf (" %d",&a);
+    for(i = 0; i<a;i++){
+        menu();    
+    }
+    return EXIT_SUCCESS;
+}
+
